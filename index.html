@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,47 +9,58 @@
 </head>
 
 <body>
-  <div id="main"  class="flex-container">
-    <p>0123456789</p>
+  <div id="main" class="flex-container">
+    <p id="res">0123456789</p>
     <div class="row">
-      <button>jnbtfg1</button>
-      <button>jnbtfg2</button>
-      <button>jnbtfg3</button>
-      <button>jnbtfg4</button>
+      <button>%</button>
+      <button>CE</button>
+      <button onclick="Clear()">C</button>
+      <button onclick="Del()">&#8656;</button>
     </div>
     <div class="row">
-      <button>jnbtfg1</button>
-      <button>jnbtfg2</button>
-      <button>jnbtfg3</button>
-      <button>jnbtfg4</button>
+      <button>1/x</button>
+      <button>X<sup>2</sup></button>
+      <button>&#8730;x</button>
+      <button>&#247;</button>
     </div>
     <div class="row">
-      <button>jnbtfg1</button>
-      <button>jnbtfg2</button>
-      <button>jnbtfg3</button>
-      <button>jnbtfg4</button>
+      <button onclick="numbers(this)">7</button>
+      <button onclick="numbers(this)">8</button>
+      <button onclick="numbers(this)">9</button>
+      <button>*</button>
     </div>
     <div class="row">
-      <button>jnbtfg1</button>
-      <button>jnbtfg2</button>
-      <button>jnbtfg3</button>
-      <button>jnbtfg4</button>
+      <button onclick="numbers(this)">4</button>
+      <button onclick="numbers(this)">5</button>
+      <button onclick="numbers(this)">6</button>
+      <button>-</button>
     </div>
     <div class="row">
-      <button>jnbtfg1</button>
-      <button>jnbtfg2</button>
-      <button>jnbtfg3</button>
-      <button>jnbtfg4</button>
+      <button onclick="numbers(this)">1</button>
+      <button onclick="numbers(this)">2</button>
+      <button onclick="numbers(this)">3</button>
+      <button>+</button>
     </div>
     <div class="row">
-      <button>jnbtfg1</button>
-      <button>jnbtfg2</button>
-      <button>jnbtfg3</button>
-      <button>jnbtfg4</button>
+      <button>&#177;</button>
+      <button onclick="numbers(this)">0</button>
+      <button>,</button>
+      <button>=</button>
     </div>
 </body>
 <script>
-
+  let result = document.getElementById("res")
+  function numbers(num) {
+    result.innerHTML +=num.innerHTML
+  }
+  function Clear(){
+    result.innerHTML="0"
+  }
+  function Del(){
+    let str = result.innerHTML
+    let newStr = str.slice(0,str.length-1)
+    result.innerHTML = newStr
+  }
 </script>
 
 </html>
